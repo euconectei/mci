@@ -1,0 +1,28 @@
+version: '3'
+services:
+  nodejs:
+    build: ./nodejs
+    container_name: "nodejs"
+    image: node:alpine
+    command: npm run dev
+    volumes:
+      - ./nodejs
+    ports:
+      - "80":"3000"
+    links:
+      - mongobd
+    depends_on:
+      - mongodb
+
+  mongodb:
+    build: mongobd
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
+    container_name: "mongodb"
+    image: mongo
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db
