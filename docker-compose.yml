@@ -4,7 +4,7 @@ services:
     build: ./nodejs
     container_name: "nodejs"
     ports:
-      - "8080:8080"
+      - "3000:3000"
     depends_on:
       - mongodb
 
@@ -15,3 +15,11 @@ services:
       - "27017:27017"
     volumes:
       - ./data/db:/data/db
+
+  graph:
+    build: ./graph
+    container_name: "graph"
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb

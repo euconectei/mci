@@ -1,5 +1,5 @@
 {
-  "name": "nodejs",
+  "name": "graph",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.3.8",
-    "nodemon": "^1.18.5"
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "mongoose": "^5.3.9"
   }
 }
