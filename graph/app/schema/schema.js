@@ -6,7 +6,7 @@ const {
   GraphQLList,
 } = require('graphql/type');
 
-const BookModel = require('../mongoose/book');
+const BookModel = require('../mongoose/BooksModel');
 
 function getProjection(fieldASTs) {
   return fieldASTs.fieldNodes[0].selectionSet.selections.reduce((projections, selection) => {

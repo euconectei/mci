@@ -1,17 +1,14 @@
 //https://medium.com/@gethylgeorge/setting-up-a-simple-graphql-server-with-node-express-and-mongoose-ff8a1071af53
 
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 4000;
 
 const graphqlHTTP = require('express-graphql');
 
-
-
-
-
 const schema = require('./schema/schema');
-const Book = require('./mongoose/book');
+const Book = require('./mongoose/BooksModel');
 
 
 
